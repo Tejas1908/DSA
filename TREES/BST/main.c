@@ -7,6 +7,7 @@ typedef struct node{
     struct node* right;
 }Node;
 
+// function to create a new node
 Node* createNode(int data){
     Node* temp = (Node*)malloc(sizeof(Node));
     temp->data = data;
@@ -15,6 +16,7 @@ Node* createNode(int data){
     return temp;
 }
 
+// function to find the minimum element in a tree
 int findMin(Node* root){
     while(root->left!=NULL){
         root = root->left;
@@ -23,6 +25,7 @@ int findMin(Node* root){
     return root->data;
 }
 
+// function to insert an element in the BST
 Node* binaryInsert(Node* root, int data){
     if(root == NULL){
         root = createNode(data);
